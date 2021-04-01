@@ -20,6 +20,10 @@
     rel="stylesheet"
     href="badgeStyle.css"
   >
+  <link
+    rel="stylesheet"
+    href="modal.css"
+  >
 </head>
 <body>
 
@@ -32,6 +36,12 @@
 />
 
 <div class="action-btn">
+  <button
+    id="btn-help"
+    class="btn btn-help"
+  >
+    Ajuda?
+  </button>
   <button
     id="clean-winners"
     class="btn btn-clean"
@@ -63,12 +73,51 @@
     <h2> Vencedoras <span id="num-winners"></span></h2>
     <div id="subs-winners"></div>
   </div>
+
+  <!-- The Modal -->
+  <div
+    id="myModal"
+    class="modal"
+  >
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div>
+        <span
+          id="close-btn-modal"
+          class="close"
+        >VOLTAR</span>
+      </div>
+      <div class="content-list-modal">
+        <h3>1.</h3>
+        <p>
+
+          Substitua SEU-CANAL, pelo nome do seu canal e acesse:
+          https://dashboard.twitch.tv/u/SEU-CANAL/channel-analytics
+        </p>
+      </div>
+      <div class="content-list-modal">
+        <h3>
+          2.
+        </h3>
+        <p>
+          Faça o download do arquivo com a lista de inscritos. Obs: O arquivo terá a extensão <strong>.csv</strong>
+          <br>
+          <img src="sub.JPG" />
+        </p>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 
 <script src="index.js"></script>
 <script src="importCsv.js"></script>
 <script src="pickWinner.js"></script>
-<script>cleanAll();</script>
+<script>
+  cleanAll();
+</script>
 </body>
 </html>

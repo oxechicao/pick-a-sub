@@ -61,3 +61,14 @@ function renderSubs(subs) {
       subs.filter(i => i[0] && !winners.find(w => w[0] && w[0] === i[0])))
   );
 }
+
+
+document.getElementById('btn-help')
+  .addEventListener('click', () => {
+    document.getElementById('myModal').style.display = 'block';
+  });
+
+document.getElementById('close-btn-modal')
+  .addEventListener('click', () => {
+    document.getElementById('myModal').style.display = 'none';
+  });

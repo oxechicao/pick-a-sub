@@ -33,6 +33,10 @@ body {
     text-align: center;
 }
 
+.btn-help {
+    background-color: #ff9bd2;
+}
+
 .btn-pick {
     background-color: aquamarine;
 }
