@@ -20,6 +20,11 @@ document.getElementById('pick-button')
     const subs = JSON.parse(localStorage.getItem('cht-subs-not'));
 
     const subsLength = subs.length;
+    if (subsLength === 0) {
+      alert('Todos os inscritos foram sorteados');
+      return;
+    }
+
     const picked = Math.floor(Math.random() * (subsLength));
     const winner = subs[picked];
 

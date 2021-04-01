@@ -27,7 +27,7 @@
   type="file"
   id="subs-csv"
   alt="csv file"
-  accept="text/csv"
+  accept=".csv"
   hidden
 />
 
@@ -53,6 +53,7 @@
   </button>
 </div>
 
+
 <div id="subs-list">
   <div class="w50">
     <h2> Participantes <span id="num-subs"></span></h2>
@@ -64,18 +65,10 @@
   </div>
 </div>
 
+
+<script src="index.js"></script>
 <script src="importCsv.js"></script>
 <script src="pickWinner.js"></script>
-<script>
-  document.getElementById('clean-winners')
-    .addEventListener('click', () => {
-      localStorage.setItem('cht-subs-not', JSON.stringify([]));
-      localStorage.setItem('cht-subs-winners', JSON.stringify([]));
-      localStorage.setItem('cht-subs-csv', JSON.stringify([]));
-      document.getElementById('subs-badge').innerHTML = '';
-      document.getElementById('subs-winners').innerHTML = '';
-      document.getElementById('subs-csv').value = '';
-    });
-</script>
+<script>cleanAll();</script>
 </body>
 </html>
