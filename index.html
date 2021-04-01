@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Subs</title>
+  <title>Sortear um Sub</title>
   <link
-    href="http://fonts.cdnfonts.com/css/averia-libre"
+    href="https://fonts.cdnfonts.com/css/averia-libre"
     rel="stylesheet"
   >
 
   <link
-    href="http://fonts.cdnfonts.com/css/cyborg-rooster"
+    href="https://fonts.cdnfonts.com/css/cyborg-rooster"
     rel="stylesheet"
   >
   <link
@@ -33,24 +33,23 @@
 
 <div class="action-btn">
   <button
+    id="clean-winners"
+    class="btn btn-clean"
+  >
+    Limpar...
+  </button>
+  <button
     id="btn-subs-csv"
-    class="btn"
+    class="btn btn-csv"
     onclick="document.getElementById('subs-csv').click()"
   >
     Importar subs.csv
   </button>
-
   <button
     id="pick-button"
     class="btn btn-pick"
   >
     Sortear!
-  </button>
-  <button
-    id="clean-winners"
-    class="btn btn-clean"
-  >
-    Limpar...
   </button>
 </div>
 
