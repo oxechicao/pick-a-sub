@@ -1,0 +1,52 @@
+body {
+    font-family: 'Averia Libre', sans-serif;
+    margin: 0;
+    background-color: #18181b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-display {
+    display: none;
+}
+
+.btn {
+    font-family: 'Cyborg Rooster', sans-serif;
+    background-color: #f2f2f2;
+    color: black;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    padding: 20px;
+    margin: 5px;
+}
+
+.btn:hover {
+    font-style: italic;
+}
+
+.action-btn {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.btn-pick {
+    background-color: aquamarine;
+}
+
+.btn-clean {
+    background-color: beige;
+}
+
+#subs-list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+}
+
+.w50 {
+    min-width: 50%;
+}

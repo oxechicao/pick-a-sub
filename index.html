@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subs</title>
+  <link
+    href="http://fonts.cdnfonts.com/css/averia-libre"
+    rel="stylesheet"
+  >
+
+  <link
+    href="http://fonts.cdnfonts.com/css/cyborg-rooster"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+  <link
+    rel="stylesheet"
+    href="badgeStyle.css"
+  >
+</head>
+<body>
+
+<input
+  type="file"
+  id="subs-csv"
+  alt="csv file"
+  accept="text/csv"
+  hidden
+/>
+
+<div class="action-btn">
+  <button
+    id="btn-subs-csv"
+    class="btn"
+    onclick="document.getElementById('subs-csv').click()"
+  >
+    Importar subs.csv
+  </button>
+
+  <button
+    id="pick-button"
+    class="btn btn-pick"
+  >
+    Sortear!
+  </button>
+  <button
+    id="clean-winners"
+    class="btn btn-clean"
+  >
+    Limpar...
+  </button>
+</div>
+
+<div id="subs-list">
+  <div class="w50">
+    <h2> Participantes <span id="num-subs"></span></h2>
+    <div id="subs-badge"></div>
+  </div>
+  <div class="w50">
+    <h2> Vencedoras <span id="num-winners"></span></h2>
+    <div id="subs-winners"></div>
+  </div>
+</div>
+
+<script src="importCsv.js"></script>
+<script src="pickWinner.js"></script>
+<script>
+  document.getElementById('clean-winners')
+    .addEventListener('click', () => {
+      localStorage.setItem('cht-subs-not', JSON.stringify([]));
+      localStorage.setItem('cht-subs-winners', JSON.stringify([]));
+      localStorage.setItem('cht-subs-csv', JSON.stringify([]));
+      document.getElementById('subs-badge').innerHTML = '';
+      document.getElementById('subs-winners').innerHTML = '';
+      document.getElementById('subs-csv').value = '';
+    });
+</script>
+</body>
+</html>

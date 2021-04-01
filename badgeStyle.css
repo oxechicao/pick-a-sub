@@ -1,0 +1,29 @@
+#subs-badge, #subs-winners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.sub-badge {
+    padding: 10px;
+    background-color: #9147ff;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 15px;
+}
+
+.sub-username {
+    font-family: 'Cyborg Rooster Laser', sans-serif;
+    font-size: 26px;
+}
+
+.sub-date {
+    font-family: 'Cyborg Rooster 3D', sans-serif;
+    font-size: 18px;
+}
+.sub-winner {
+    background-color: #18993f;
+}
