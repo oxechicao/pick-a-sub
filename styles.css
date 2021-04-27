@@ -23,11 +23,31 @@ body {
     margin: 5px;
 }
 
+.me-div {
+    box-shadow: 4px 5px 6px whitesmoke;
+    padding: 3px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 235px;
+}
+
 .btn:hover {
     font-style: italic;
 }
 
+.action-bar {
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
 .action-btn {
+    width: 50%;
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;

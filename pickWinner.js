@@ -1,13 +1,16 @@
 function refreshWinners() {
   document.getElementById('subs-winners').innerHTML = '';
+
+  const data = JSON.parse(localStorage.getItem('cht-subs-csv'));
   const winners = JSON.parse(localStorage.getItem('cht-subs-winners'));
+
   winners.forEach((winner, idx) => {
     const divWinner = document.createElement('div');
     divWinner.className = 'sub-badge sub-winner';
 
     const divSubUsername = document.createElement('div');
     divSubUsername.className = 'sub-username';
-    divSubUsername.innerHTML = `${idx + 1} - ${winner[0]}`;
+    divSubUsername.innerHTML = `${idx + 1} - ${data[winner].name}`;
     divWinner.appendChild(divSubUsername);
 
     document.getElementById('subs-winners')
@@ -17,32 +20,32 @@ function refreshWinners() {
 
 document.getElementById('pick-button')
   .addEventListener('click', () => {
-    const subs = JSON.parse(localStorage.getItem('cht-subs-not'));
+    const subs = JSON.parse(localStorage.getItem('cht-subs-sort') || '[]');
+    const winners = JSON.parse(localStorage.getItem('cht-subs-winners') || '[]');
 
-    const subsLength = subs.length;
-    if (subsLength === 0) {
+    if (subs.length === winners.length) {
       alert('Todos os inscritos foram sorteados');
       return;
     }
 
-    const picked = Math.floor(Math.random() * (subsLength));
-    const winner = subs[picked];
+    let picked = Math.floor(Math.random() * (subs.length));
+    let valid = false;
+    let winner = -1;
 
-    let subsPicked = localStorage.getItem('cht-subs-winners');
-    if (subsPicked) {
-      subsPicked = subsPicked = JSON.parse(subsPicked);
-    } else {
-      subsPicked = [];
-    }
+    do {
+      picked = Math.floor(Math.random() * (subs.length));
+      winner = subs[picked];
+      valid = winners.find(i => i === winner) === undefined;
+      if (valid) {
+        winners.push(winner);
+      }
+    } while (!valid);
 
-    if (!subsPicked.find(i => i[0] && i[0] === winner[0])) {
-      subsPicked.push(winner);
-    }
-
-    document.getElementById('num-winners').innerHTML = `(${subsPicked.length})`;
+    document.getElementById('num-winners').innerHTML = `(${winners.length})`;
     localStorage.setItem('cht-subs-not', JSON.stringify(
       subs.filter((item, idx) => idx !== picked)
     ));
-    localStorage.setItem('cht-subs-winners', JSON.stringify(subsPicked));
+
+    localStorage.setItem('cht-subs-winners', JSON.stringify(winners));
     refreshWinners();
   });
