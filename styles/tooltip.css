@@ -1,0 +1,41 @@
+.tooltip-winner {
+    padding: 5px 10px;
+    font-weight: bolder;
+}
+
+.tooltip-off {
+    color: white;
+    background-color: rgb(172, 29, 29);
+    border-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left: 1px rgb(172, 29, 29) solid;
+    border-top: 1px solid rgb(172, 29, 29);
+    border-bottom: 1px solid rgb(172, 29, 29);
+}
+
+.tooltip-on {
+    color: white;
+    background-color: rgb(29, 172, 36);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 1px rgb(29, 172, 36) solid;
+    border-top: 1px solid rgb(29, 172, 36);
+    border-bottom: 1px solid rgb(29, 172, 36);
+}
+
+.tooltip-on-unable {
+    color: #999;
+    background-color: rgba(0,0,0,0);
+    border-right: 1px #999 solid;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+
+.tooltip-off-unable {
+    color: #999;
+    background-color: rgba(0,0,0,0);
+    border-left: 1px #999 solid;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}

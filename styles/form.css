@@ -1,0 +1,40 @@
+.input-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-text > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.input-text > div > input {
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.input-text > label {
+    font-size: 16px;
+}
+
+.input-text > span {
+    font-size: 12px;
+    color: lightgray;
+}
+
+.input-white {
+    color: white;
+}
+.input-white > div > input {
+    color: white;
+    border-color: white;
+}

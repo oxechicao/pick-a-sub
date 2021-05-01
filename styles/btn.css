@@ -1,0 +1,47 @@
+.btn {
+    font-family: 'Cyborg Rooster', sans-serif;
+    background-color: #f2f2f2;
+    color: black;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    padding: 20px;
+    margin: 5px;
+    letter-spacing: 1.5px;
+}
+
+.btn:hover {
+    font-style: italic;
+}
+
+.btn-sm {
+    border-radius: 3px;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+}
+
+.btn-invert-white {
+    background: #00000000; border: 1px solid white; color: #fff
+}
+
+
+.btn-help {
+    background-color: #ff9bd2;
+}
+
+.btn-pick {
+    background-color: aquamarine;
+}
+
+.btn-csv {
+    background-color: #faf3c7;
+}
+
+.btn-clean {
+    background-color: #d2d2d2;
+}
+
+.btn-insert {
+    background-color: #fff;
+}

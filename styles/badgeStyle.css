@@ -20,7 +20,7 @@
 .sub-badge-close {
     width: 20px;
     height: 20px;
-    background-image: url('delete.svg');
+    background-image: url('../image/delete.svg');
     background-size: 15px;
     background-position: center;
     background-repeat: no-repeat;

@@ -14,35 +14,39 @@
   >
   <link
     rel="stylesheet"
-    href="styles.css"
+    href="styles/styles.css"
   >
   <link
     rel="stylesheet"
-    href="badgeStyle.css"
+    href="styles/form.css"
   >
   <link
     rel="stylesheet"
-    href="modal.css"
+    href="styles/btn.css"
+  >
+  <link
+    rel="stylesheet"
+    href="styles/badgeStyle.css"
+  >
+  <link
+    rel="stylesheet"
+    href="styles/modal.css"
+  >
+  <link
+    rel="stylesheet"
+    href="styles/tooltip.css"
   >
 </head>
 <body>
 
-<input
-  type="file"
-  id="subs-csv"
-  alt="csv file"
-  accept=".csv"
-  hidden
-/>
-
-<div class="action-bar">
+<section class="action-bar">
   <div class="me-div">
     <a
       href="https://chicaothiago.github.io"
       target="_blank"
     >
       <img
-        src="logo.png"
+        src="image/logo.png"
         width="100"
         alt="chicao-logo"
       /></a>
@@ -87,16 +91,61 @@
     >
       Importar subs.csv
     </button>
-    <button
-      id="pick-button"
-      class="btn btn-pick"
-    >
-      Sortear!
-    </button>
   </div>
-</div>
+</section>
 
-<div id="subs-list">
+<section class="option-bar">
+  <div class="input-text input-white">
+    <label for="input-one-sub">
+      Inserir participantes manualmente
+    </label>
+    <div>
+      <input 
+        id="input-one-sub"
+        type="text"
+        name="input-one-sub"
+      />
+      <button 
+        class="btn btn-sm btn-insert" 
+        onclick="insertManually()"
+      > 
+        Inserir 
+      </button>
+    </div>
+    <span>
+      Separe cada pessoa por vírgula. Ex: Atenas, Afrodite, Zeus, Odin, Loki, Freya
+    </span>
+  </div>
+  <div>
+    <input 
+      id="winner-again" 
+      type="checkbox" 
+      name="winner-again"
+      hidden
+    />
+    <label 
+      onclick="changeWinnerInLabel()"
+    >
+        Podem ganhar <strong>novamente</strong>?
+    </label>
+    <span 
+      onclick="changeWinnerInLabel()"
+      id="tooltip-winner-off" 
+      class="tooltip-winner tooltip-off"
+    >
+      Não
+    </span>
+    <span 
+      onclick="changeWinnerInLabel()"
+      id="tooltip-winner-on" 
+      class="tooltip-winner tooltip-on tooltip-on-unable"
+    >
+      Sim
+    </span>
+  </div>
+</section>
+
+<main id="subs-list">
   <div class="w50">
     <div style="display: flex; justify-content: center">
       <div style="margin-right: 15px;">
@@ -105,8 +154,7 @@
       <div style="margin-left: 15px;">
         <button
           id="btn-shuffle"
-          class="btn btn-invert"
-          style="background: #00000000; border: 1px solid white; color: #fff"
+          class="btn btn-invert-white"
         >
           Embaralhar
         </button>
@@ -115,54 +163,75 @@
     <div id="subs-badge"></div>
   </div>
   <div class="w50">
-    <h2> Vencedoras <span id="num-winners"></span></h2>
-    <div id="subs-winners"></div>
-  </div>
-
-  <!-- The Modal -->
-  <div
-    id="myModal"
-    class="modal"
-  >
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div>
-        <span
-          id="close-btn-modal"
-          class="close"
-        >VOLTAR</span>
+    <div style="display: flex; justify-content: center">
+      <div style="margin-right: 15px;">
+        <h2> Vencedoras <span id="num-winners"></span></h2>
       </div>
-      <div class="content-list-modal">
-        <h3>1.</h3>
-        <p>
-
-          Substitua SEU-CANAL, pelo nome do seu canal e acesse:
-          https://dashboard.twitch.tv/u/SEU-CANAL/channel-analytics
-        </p>
-      </div>
-      <div class="content-list-modal">
-        <h3>
-          2.
-        </h3>
-        <p>
-          Faça o download do arquivo com a lista de inscritos. Obs: O arquivo terá a extensão <strong>.csv</strong>
-          <br>
-          <img src="sub.JPG" />
-        </p>
+      <div style="margin-left: 15px;">
+        <button
+          id="pick-button"
+          class="btn btn-pick"
+        >
+          Sortear!
+        </button>
       </div>
     </div>
-
+    <div id="subs-winners"></div>
   </div>
+</main>
 
+<!-- The Modal -->
+<div
+id="myModal"
+class="modal"
+>
+
+<!-- Modal content -->
+<dialog class="modal-content">
+  <div>
+    <span
+      id="close-btn-modal"
+      class="close"
+    >VOLTAR</span>
+  </div>
+  <div class="content-list-modal">
+    <h3>1.</h3>
+    <p>
+
+      Substitua SEU-CANAL, pelo nome do seu canal e acesse:
+      https://dashboard.twitch.tv/u/SEU-CANAL/channel-analytics
+    </p>
+  </div>
+  <div class="content-list-modal">
+    <h3>
+      2.
+    </h3>
+    <p>
+      Faça o download do arquivo com a lista de inscritos. Obs: O arquivo terá a extensão <strong>.csv</strong>
+      <br>
+      <img src="image/sub.JPG" />
+    </p>
+  </div>
 </div>
 
+</dialog>
 
-<script src="index.js"></script>
-<script src="importCsv.js"></script>
-<script src="pickWinner.js"></script>
+<input
+  type="file"
+  id="subs-csv"
+  alt="csv file"
+  accept=".csv,.txt"
+  hidden
+/>
+
+<script src="js/constants.js"></script>
+<script src="js/index.js"></script>
+<script src="js/importCsv.js"></script>
+<script src="js/pickWinner.js"></script>
+<script src="js/insertManually.js"></script>
+<script src="js/winnerAgain.js"></script>
 <script>
-  cleanAll();
+  cleanAll()
 </script>
 </body>
 </html>
