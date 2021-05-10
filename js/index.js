@@ -16,8 +16,8 @@ document.getElementById('clean-winners')
   })
 
 function renderSubs() {
-  const data = JSON.parse(localStorage.getItem('cht-subs-csv'))
-  const sort = JSON.parse(localStorage.getItem('cht-subs-sort'))
+  const data = JSON.parse(localStorage.getItem(storageParticipants))
+  const sort = JSON.parse(localStorage.getItem(storageSort))
 
   document.getElementById('num-subs').innerHTML = `(${sort.length})`
 
@@ -54,8 +54,8 @@ function renderSubs() {
 }
 
 function removeSub(index) {
-  const subs = JSON.parse(localStorage.getItem('cht-subs-sort')).filter((i, idx) => idx !== index)
-  localStorage.setItem('cht-subs-sort', JSON.stringify(subs))
+  const subs = JSON.parse(localStorage.getItem(storageSort)).filter((i, idx) => idx !== index)
+  localStorage.setItem(storageSort, JSON.stringify(subs))
   document.getElementById('subs-badge').innerHTML = ''
   renderSubs()
 }
@@ -72,14 +72,17 @@ document.getElementById('close-btn-modal')
 
 document.getElementById('btn-shuffle')
   .addEventListener('click', () => {
-    const sort = JSON.parse(localStorage.getItem('cht-subs-sort'))
+    const sort = JSON.parse(localStorage.getItem(storageSort))
     let shuffle = [...sort]
     sort.forEach((i, indx) => {
-      const j = Math.floor(Math.random() * (indx + 1))
-      [shuffle[indx], shuffle[j]] = [shuffle[j], shuffle[indx]]
+      const j = Math.floor((Math.random() * (shuffle.length)))
+      const a = shuffle[indx]
+      const b = shuffle[j]
+      shuffle[indx] = b
+      shuffle[j] = a
     })
 
-    localStorage.setItem('cht-subs-sort', JSON.stringify(shuffle))
+    localStorage.setItem(storageSort, JSON.stringify(shuffle))
     document.getElementById('subs-badge').innerHTML = ''
     renderSubs()
   })
