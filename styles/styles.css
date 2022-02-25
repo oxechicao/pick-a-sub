@@ -1,61 +1,62 @@
 body {
-    font-family: 'Averia Libre', sans-serif;
-    margin: 0;
-    background-color: #18181b;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: #18181b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.section-body {
+  width: 100%;
+}
 .no-display {
-    display: none;
+  display: none;
 }
-
 
 .me-div {
-    box-shadow: 4px 5px 6px whitesmoke;
-    padding: 3px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 235px;
+  /* box-shadow: 4px 5px 6px whitesmoke; */
+  padding: 3px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 235px;
 }
 
 .option-bar {
-    display: flex;
-    justify-content: space-around;
-    max-width: 90%;
-    width: 100%;
-    align-items: center;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 90%;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .action-bar {
-    display: flex;
-    justify-content: center;
-    max-width: 90%;
-    width: 100%;
-    align-items: center;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  max-width: 90%;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .action-btn {
-    width: 50%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
+  width: 50%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
-
 #subs-list {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    text-align: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
 }
 
 .w50 {
-    min-width: 50%;
+  min-width: 50%;
 }

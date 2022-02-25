@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Sortear um Sub</title>
-  <link
-    href="https://fonts.cdnfonts.com/css/averia-libre"
-    rel="stylesheet"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.cdnfonts.com/css/cyborg-rooster"
-    rel="stylesheet"
-  >
   <link
     rel="stylesheet"
     href="styles/styles.css"
@@ -39,146 +34,165 @@
 </head>
 <body>
 
-<section class="action-bar">
-  <div class="me-div">
-    <a
-      href="https://oxechicao.github.io"
-      target="_blank"
-    >
-      <img
-        src="image/logo.png"
-        width="100"
-        alt="chicao-logo"
-      /></a>
-    <a
-      href="https://github.com/oxechicao/pick-a-sub"
-      target="_blank"
-    >
-      <img
-        src="https://image.flaticon.com/icons/png/512/25/25231.png"
-        alt="github-logo"
-        width="40"
-        style="filter: invert();"
-      /></a>
-    <a
-      href="https://twitch.tv/oxechicao"
-      target="_blank"
-    >
-      <img
-        src="https://pngimg.com/uploads/twitch/twitch_PNG27.png"
-        alt="twitch-logo"
-        width="45"
-      >
-    </a>
-  </div>
-  <div class="action-btn">
-    <button
-      id="btn-help"
-      class="btn btn-help"
-    >
-      Ajuda?
-    </button>
-    <button
-      id="clean-winners"
-      class="btn btn-clean"
-    >
-      Limpar...
-    </button>
-    <button
-      id="btn-subs-csv"
-      class="btn btn-csv"
-      onclick="document.getElementById('subs-csv').click()"
-    >
-      Importar subs.csv
-    </button>
-  </div>
-</section>
-
-<section class="option-bar">
-  <div class="input-text input-white">
-    <label for="input-one-sub">
-      Inserir participantes manualmente
-    </label>
-    <div>
-      <input 
-        id="input-one-sub"
-        type="text"
-        name="input-one-sub"
-      />
-      <button 
-        class="btn btn-sm btn-insert" 
-        onclick="insertManually()"
-      > 
-        Inserir 
-      </button>
-    </div>
-    <span>
-      Separe cada pessoa por vírgula. Ex: Atenas, Afrodite, Zeus, Odin, Loki, Freya
-    </span>
-  </div>
-  <div>
-    <input 
-      id="winner-again" 
-      type="checkbox" 
-      name="winner-again"
-      hidden
-    />
-    <label 
-      onclick="changeWinnerInLabel()"
-    >
-        Podem ganhar <strong>novamente</strong>?
-    </label>
-    <span 
-      onclick="changeWinnerInLabel()"
-      id="tooltip-winner-off" 
-      class="tooltip-winner tooltip-off"
-    >
-      Não
-    </span>
-    <span 
-      onclick="changeWinnerInLabel()"
-      id="tooltip-winner-on" 
-      class="tooltip-winner tooltip-on tooltip-on-unable"
-    >
-      Sim
-    </span>
-  </div>
-</section>
-
-<main id="subs-list">
-  <div class="w50">
-    <div style="display: flex; justify-content: center">
-      <div style="margin-right: 15px;">
-        <h2> Participantes <span id="num-subs"></span></h2>
-      </div>
-      <div style="margin-left: 15px;">
-        <button
-          id="btn-shuffle"
-          class="btn btn-invert-white"
+<section class="section-body">
+  <header>
+    <div class="action-bar">
+      <div class="me-div">
+        <a
+          href="https://oxechicao.github.io"
+          target="_blank"
         >
-          Embaralhar
+          <img
+            src="image/logo_oxe_chicao.png"
+            width="100"
+            alt="chicao-logo"
+          /></a>
+        <a
+          href="https://github.com/oxechicao/pick-a-sub"
+          target="_blank"
+        >
+          <img
+            src="https://image.flaticon.com/icons/png/512/25/25231.png"
+            alt="github-logo"
+            width="40"
+            style="filter: invert();"
+          /></a>
+        <a
+          href="https://twitch.tv/oxechicao"
+          target="_blank"
+        >
+          <img
+            src="https://pngimg.com/uploads/twitch/twitch_PNG27.png"
+            alt="twitch-logo"
+            width="45"
+          >
+        </a>
+      </div>
+      <div class="action-btn">
+        <button
+          id="clean-winners"
+          class="btn btn-clean"
+        >
+          Limpar...
+        </button>
+        <button
+          id="btn-help"
+          class="btn btn-help"
+        >
+          Ajuda?
+        </button>
+        <button
+          id="btn-subs-csv"
+          class="btn btn-csv"
+          onclick="document.getElementById('subs-csv').click()"
+        >
+          Importar subs.csv
         </button>
       </div>
     </div>
-    <div id="subs-badge"></div>
-  </div>
-  <div class="w50">
-    <div style="display: flex; justify-content: center">
-      <div style="margin-right: 15px;">
-        <h2> Vencedoras <span id="num-winners"></span></h2>
+  </header>
+  <main>
+    <div class="option-bar">
+      <div>
+        <div class="input-text input-white">
+          <label for="input-one-sub">
+            Inserir participantes manualmente
+          </label>
+          <div>
+            <input
+              id="input-one-sub"
+              type="text"
+              name="input-one-sub"
+            />
+            <button
+              class="btn btn-sm btn-insert"
+              onclick="insertManually()"
+            >
+              Inserir
+            </button>
+          </div>
+          <span>
+            Separe cada pessoa por vírgula. Ex: Atenas, Afrodite, Zeus, Odin, Loki, Freya
+          </span>
+        </div>
       </div>
-      <div style="margin-left: 15px;">
-        <button
-          id="pick-button"
-          class="btn btn-pick"
-        >
-          Sortear!
-        </button>
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px;">
+        <div>
+          <input
+            id="winner-again"
+            type="checkbox"
+            name="winner-again"
+            hidden
+          />
+          <label
+            onclick="changeWinnerInLabel()"
+          >
+              Podem ganhar <strong>novamente</strong>?
+          </label>
+          <span
+            onclick="changeWinnerInLabel()"
+            id="tooltip-winner-off"
+            class="tooltip-winner tooltip-off"
+          >
+            Não
+          </span>
+          <span
+            onclick="changeWinnerInLabel()"
+            id="tooltip-winner-on"
+            class="tooltip-winner tooltip-on tooltip-on-unable"
+          >
+            Sim
+          </span>
+        </div>
+        <div style="margin-top: 10px;">
+          <button
+            id="btn-restart-winners"
+            class="btn-small btn-invert-white"
+          >
+            Reiniciar Sorteio
+          </button>
+        </div>
       </div>
     </div>
-    <div id="subs-winners"></div>
-  </div>
-</main>
+    <div id="subs-list">
+      <div class="w50">
+
+        <div style="display: flex; justify-content: center">
+          <div style="margin-right: 15px;">
+            <h2> Participantes <span id="num-subs"></span></h2>
+          </div>
+          <div style="margin-left: 15px;">
+            <button
+              id="btn-shuffle"
+              class="btn btn-invert-white"
+            >
+              Embaralhar
+            </button>
+          </div>
+        </div>
+        <div id="subs-badge"></div>
+      </div>
+      <div class="w50">
+        <div style="display: flex; justify-content: center">
+          <div style="margin-right: 15px;">
+            <h2> Vencedoras <span id="num-winners"></span></h2>
+          </div>
+          <div style="margin-left: 15px;">
+            <button
+              id="pick-button"
+              class="btn btn-pick"
+            >
+              Sortear!
+            </button>
+          </div>
+        </div>
+        <div id="subs-winners"></div>
+      </div>
+    </div>
+  </main>
+</section>
+
+
 
 <!-- The Modal -->
 <div

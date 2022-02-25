@@ -1,48 +1,48 @@
-#subs-badge, #subs-winners {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 800px;
+#subs-badge,
+#subs-winners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
 }
 
 .sub-badge {
-    display: flex;
-    padding: 10px 20px;
-    background-color: #9147ff;
-    color: white;
-    border-radius: 20px;
-    text-align: center;
-    letter-spacing: 1px;
-    margin: 15px;
-    align-items: center ;
+  display: flex;
+  padding: 10px 20px;
+  background-color: #9147ff;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 15px;
+  align-items: center;
 }
 
 .sub-badge-close {
-    width: 20px;
-    height: 20px;
-    background-image: url('../image/delete.svg');
-    background-size: 15px;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-left: 20px;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 10px;
-    filter: invert();
+  width: 20px;
+  height: 20px;
+  background-image: url("../image/delete.svg");
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  filter: invert();
 }
-.sub-badge-close:hover,.sub-badge-close:focus {
-    background-color: #4fca5f;
+.sub-badge-close:hover,
+.sub-badge-close:focus {
+  background-color: #4fca5f;
 }
 
 .sub-username {
-    font-family: 'Cyborg Rooster Laser', sans-serif;
-    font-size: 26px;
+  font-size: 26px;
 }
 
 .sub-date {
-    font-family: 'Cyborg Rooster 3D', sans-serif;
-    font-size: 18px;
+  font-size: 10px;
 }
 .sub-winner {
-    background-color: #18993f;
+  background-color: #18993f;
 }

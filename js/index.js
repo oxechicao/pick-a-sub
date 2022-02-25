@@ -1,13 +1,23 @@
 const cleanAll = () => {
   localStorage.setItem(storageParticipants, JSON.stringify([]))
-  localStorage.setItem(storageWinners, JSON.stringify([]))
+  localStorage.setItem(storageWinnerAgain, false)
   localStorage.setItem(storageNotWinner, JSON.stringify([]))
   localStorage.setItem(storageSort, JSON.stringify([]))
-  localStorage.setItem(storageWinnerAgain, false)
-  
+  localStorage.setItem(storageWinners, JSON.stringify([]))
+
   document.getElementById('subs-badge').innerHTML = ''
-  document.getElementById('subs-winners').innerHTML = ''
   document.getElementById('subs-csv').value = ''
+  document.getElementById('num-subs').innerHTML = ''
+
+  document.getElementById('subs-winners').innerHTML = ''
+  document.getElementById('num-winners').innerHTML = ''
+}
+
+const cleanWinners = () => {
+  localStorage.setItem(storageWinners, JSON.stringify([]))
+  localStorage.setItem(storageNotWinner, JSON.stringify([]))
+  document.getElementById('num-winners').innerHTML = ''
+  document.getElementById('subs-winners').innerHTML = ''
 }
 
 document.getElementById('clean-winners')
@@ -68,6 +78,11 @@ document.getElementById('btn-help')
 document.getElementById('close-btn-modal')
   .addEventListener('click', () => {
     document.getElementById('myModal').style.display = 'none'
+  })
+
+document.getElementById('btn-restart-winners')
+  .addEventListener('click', () => {
+    cleanWinners()
   })
 
 document.getElementById('btn-shuffle')
