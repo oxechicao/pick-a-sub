@@ -29,6 +29,7 @@ function renderSubs() {
   const data = JSON.parse(localStorage.getItem(storageParticipants))
   const sort = JSON.parse(localStorage.getItem(storageSort))
 
+  document.getElementById('subs-badge').innerHTML = ''
   document.getElementById('num-subs').innerHTML = `(${sort.length})`
 
   sort.forEach((row, rowIndex) => {
